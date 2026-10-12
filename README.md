@@ -9,6 +9,11 @@ A single page, bilingual (English and Nepali) website for Ishara Agriculture Mul
 | File | Purpose |
 |---|---|
 | `index.html` | The whole website: content, styling and scripts |
+| `404.html` | Page shown for broken or mistyped links |
+| `og-image.png` | Preview image shown when the link is shared on WhatsApp, Facebook, Viber, etc. |
+| `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Icons for phone home screens and browser tabs |
+| `site.webmanifest` | Lets visitors add the site to their phone home screen |
+| `robots.txt`, `sitemap.xml` | Tell search engines what to index |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 ## Making changes on GitHub
@@ -32,6 +37,15 @@ Example: the honey description is `data-i18n="honey.p"` in the page, and `"honey
 - **Phone / WhatsApp number:** search for `9779846036728` and `9846036728` and replace every occurrence.
 - **Product descriptions:** search for the product name, then update the matching key in the `NE` list.
 - **Adding photos:** upload the image to this repo (Add file, Upload files), then reference it in `index.html`, for example `<img src="fish.jpg" alt="Fish pond">`.
+
+## Languages and search engines
+
+- English is the default address: https://ishworfarm.github.io/
+- Nepali has its own address: https://ishworfarm.github.io/?lang=ne . Share this link with Nepali speaking customers.
+- Both addresses are listed in `sitemap.xml` and linked to each other in the page head (`hreflang`), so search engines can show the right language.
+- When the page text changes a lot, update the `<lastmod>` dates in `sitemap.xml`.
+- The search description is the `<meta name="description">` tag (English) and `page.desc` in the `NE` list (Nepali). Keep both under about 160 characters where possible, and mention the main products and Chapakot.
+- Product details are also listed in the structured data block (`application/ld+json`) at the top of `index.html`. If a product is added or removed, update it there too.
 
 ## Notes
 
