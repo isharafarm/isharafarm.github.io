@@ -28,6 +28,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="manifest" href="site.webmanifest">
+<link rel="preload" as="image" href="img/hero-hills-1200.webp" imagesrcset="img/hero-hills-720.webp 720w, img/hero-hills-1200.webp 1200w" imagesizes="(max-width: 960px) 100vw, 520px" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%232f5d34'/><path d='M32 48c0-14 6-22 16-26-2 12-8 22-16 26zm0 0c0-10-4-16-12-19 1 9 5 16 12 19z' fill='%23e9d8a6'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,7 +176,8 @@
   .hero-facts div { font-size: 0.9rem; color: var(--muted); }
   .hero-facts strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.7rem; color: var(--green-900); }
   .hero-art { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); background: #cfe3c6; }
-  .hero-art svg { width: 100%; height: auto; }
+  .hero-art { position: relative; }
+  .hero-art img { width: 100%; height: auto; aspect-ratio: 1200 / 792; object-fit: cover; }
 
   /* Pillars */
   .pillars { background: var(--white); }
@@ -192,21 +194,17 @@
     background: var(--white); border-radius: var(--radius); overflow: hidden;
     box-shadow: var(--shadow); display: flex; flex-direction: column;
   }
-  .product .art { height: 130px; display: grid; place-items: center; }
-  .product .art svg { width: 72px; height: 72px; }
+  .product .art { position: relative; aspect-ratio: 4 / 3; background: var(--sand); overflow: hidden; }
+  .product .art img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-note {
+    position: absolute; left: 10px; bottom: 10px; background: rgba(20, 30, 20, 0.62); color: #fff;
+    font-size: 0.72rem; font-weight: 500; padding: 2px 9px; border-radius: 999px; pointer-events: none;
+  }
   .product .body { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
   .product p { color: var(--muted); font-size: 0.93rem; flex: 1; }
   .product a { font-weight: 600; font-size: 0.9rem; text-decoration: none; }
   .product a:hover { text-decoration: underline; }
   .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; background: var(--sand); color: var(--earth-700); padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; align-self: flex-start; }
-  .a-fish { background: #d6e9ee; color: #2d6b7d; }
-  .a-bee { background: #f6e7b8; color: #8a6412; }
-  .a-mush { background: #eadfd2; color: #7a5230; }
-  .a-fruit { background: #f6d9cf; color: #a4482c; }
-  .a-duck { background: #e3ecd3; color: #4f6b22; }
-  .a-broom { background: #ece4c9; color: #7b6a2a; }
-  .a-spice { background: #f3dcc4; color: #9a4f17; }
-  .a-crop { background: #dcebd5; color: #2f5d34; }
   .note {
     margin-top: 32px; padding: 18px 22px; border-left: 4px solid var(--earth-300);
     background: var(--sand); border-radius: 0 var(--radius) var(--radius) 0; color: #5a4a35; font-size: 0.95rem;
@@ -259,6 +257,12 @@
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
   footer strong { color: var(--white); font-family: "Fraunces", Georgia, serif; font-size: 1.1rem; }
   footer a { color: #d7e6d1; text-decoration: none; }
+  .credits { margin-top: 22px; font-size: 0.82rem; }
+  .credits summary { cursor: pointer; color: #d7e6d1; padding: 6px 0; }
+  .credits p { margin: 8px 0 4px; }
+  .credits ul { margin: 0; padding-left: 1.2em; }
+  .credits li { margin-bottom: 4px; }
+  .credits a { text-decoration: underline; }
   footer .copy { border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 26px; padding-top: 18px; font-size: 0.82rem; }
 
   /* Floating WhatsApp */
@@ -363,32 +367,9 @@
           <div><strong data-i18n="fact.3n">Direct</strong><span data-i18n="fact.3">from the farm</span></div>
         </div>
       </div>
-      <div class="hero-art" role="img" aria-label="Illustration of the farm with hills, a fish pond, beehives and crops">
-        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
-          <rect width="480" height="360" fill="#e8f1f2"/>
-          <circle cx="380" cy="70" r="30" fill="#f4d47c"/>
-          <path d="M0 190 L90 90 L170 170 L260 70 L360 160 L420 110 L480 150 L480 360 L0 360Z" fill="#9fbf8f"/>
-          <path d="M210 110 L260 70 L300 105 L280 100 L260 112 L240 100Z" fill="#ffffff" opacity="0.8"/>
-          <path d="M0 230 Q120 180 240 220 T480 210 L480 360 L0 360Z" fill="#6f9e5c"/>
-          <path d="M0 270 Q140 235 260 262 T480 255 L480 360 L0 360Z" fill="#4f8a4b"/>
-          <ellipse cx="140" cy="305" rx="95" ry="26" fill="#6fb0c2"/>
-          <ellipse cx="140" cy="303" rx="80" ry="18" fill="#8cc6d4"/>
-          <path d="M118 300 q10 -8 20 0 q-10 8 -20 0z M138 300 l8 -5 v10z" fill="#2d6b7d"/>
-          <path d="M160 309 q8 -6 16 0 q-8 6 -16 0z M176 309 l6 -4 v8z" fill="#2d6b7d"/>
-          <g transform="translate(300 262)">
-            <rect x="0" y="12" width="34" height="30" rx="3" fill="#d8b98a"/>
-            <rect x="-3" y="6" width="40" height="8" rx="2" fill="#7a5230"/>
-            <rect x="46" y="12" width="34" height="30" rx="3" fill="#d8b98a"/>
-            <rect x="43" y="6" width="40" height="8" rx="2" fill="#7a5230"/>
-            <circle cx="30" cy="-6" r="3" fill="#8a6412"/><circle cx="58" cy="-12" r="3" fill="#8a6412"/>
-          </g>
-          <g stroke="#2f5d34" stroke-width="3" stroke-linecap="round">
-            <path d="M400 330 v-30 M412 330 v-38 M424 330 v-28 M436 330 v-34 M448 330 v-26"/>
-          </g>
-          <g fill="#7b6a2a"><circle cx="412" cy="290" r="4"/><circle cx="436" cy="294" r="4"/><circle cx="400" cy="298" r="3"/></g>
-          <rect x="250" y="300" width="36" height="28" fill="#f1e8d6"/>
-          <path d="M244 302 L268 284 L292 302Z" fill="#a4482c"/>
-        </svg>
+      <div class="hero-art">
+        <img src="img/hero-hills-1200.webp" srcset="img/hero-hills-720.webp 720w, img/hero-hills-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 520px" width="1200" height="792" fetchpriority="high" alt="Green hills and terraced farmland in Nepal" data-i18n-alt="img.hero">
+        <span class="photo-note" data-i18n="img.note">Sample photo</span>
       </div>
     </div>
   </section>
@@ -427,7 +408,7 @@
 
       <div class="product-grid">
         <article class="product">
-          <div class="art a-fish"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32c8-12 22-16 34-10l12-8v36l-12-8C30 48 16 44 8 32z"/><circle cx="20" cy="30" r="2" fill="currentColor"/></svg></div>
+          <div class="art"><img src="img/fish.webp" width="640" height="480" loading="lazy" decoding="async" alt="Pangasius fish" data-i18n-alt="img.fish"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="fish.tag">Aquaculture</span>
             <h3 data-i18n="fish.t">Fish</h3>
@@ -436,7 +417,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-bee"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="36" rx="12" ry="16"/><path d="M20 32h24M21 40h22M26 21c-6-10-16-8-16-2s8 8 16 6M38 21c6-10 16-8 16-2s-8 8-16 6"/></svg></div>
+          <div class="art"><img src="img/honey.webp" width="640" height="480" loading="lazy" decoding="async" alt="Honeycomb and honey" data-i18n-alt="img.bee"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="honey.tag">Beekeeping</span>
             <h3 data-i18n="honey.t">Honey</h3>
@@ -445,7 +426,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-mush"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30c0-12 11-20 24-20s24 8 24 20H8z"/><path d="M24 30v18a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V30"/><circle cx="22" cy="21" r="2" fill="currentColor"/><circle cx="38" cy="18" r="2" fill="currentColor"/></svg></div>
+          <div class="art"><img src="img/shiitake.webp" width="640" height="480" loading="lazy" decoding="async" alt="Shiitake mushrooms growing on a log" data-i18n-alt="img.mush"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="mush.tag">Cultivation</span>
             <h3 data-i18n="mush.t">Japanese Shiitake Mushrooms</h3>
@@ -454,7 +435,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-fruit"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 20c-12-6-22 2-22 14s10 22 22 18c12 4 22-6 22-18s-10-20-22-14z"/><path d="M32 20c0-6 2-10 6-12M32 18c-4-6-10-6-12-4"/></svg></div>
+          <div class="art"><img src="img/lemon.webp" width="640" height="480" loading="lazy" decoding="async" alt="Lemon on the tree" data-i18n-alt="img.fruit"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="fruit.tag">Orchard</span>
             <h3 data-i18n="fruit.t">Lemon and Nibuwa</h3>
@@ -463,7 +444,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-duck"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 38c0 8 8 14 20 14s20-6 20-16c-6 4-12 2-16-2"/><path d="M38 34c4-4 4-10 0-14s-12-2-12 6c0 4 2 6 4 8-8 0-16 0-16 4"/><path d="M26 22l-8 2 8 2"/><circle cx="32" cy="22" r="1.5" fill="currentColor"/></svg></div>
+          <div class="art"><img src="img/duck.webp" width="640" height="480" loading="lazy" decoding="async" alt="White Pekin duck on water" data-i18n-alt="img.duck"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="duck.tag">Livestock</span>
             <h3 data-i18n="duck.t">Ducks</h3>
@@ -472,7 +453,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-broom"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6v30M24 36h16l6 22H18l6-22z"/><path d="M26 42l-2 16M32 42v16M38 42l2 16"/></svg></div>
+          <div class="art"><img src="img/amriso.webp" width="640" height="480" loading="lazy" decoding="async" alt="Amriso broom grass plant" data-i18n-alt="img.broom"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="broom.tag">Cash crop</span>
             <h3 data-i18n="broom.t">Broom Grass (Amriso)</h3>
@@ -481,7 +462,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-spice"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 14c8 0 12 6 12 14s-4 24-14 28C14 50 12 40 14 30s2-16 8-16z"/><path d="M22 14c0-4 2-8 6-8"/></svg></div>
+          <div class="art"><img src="img/dalle-khursani.webp" width="640" height="480" loading="lazy" decoding="async" alt="Dalle Khursani chillies" data-i18n-alt="img.spice"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
           <div class="body">
             <span class="tag" data-i18n="spice.tag">Spices</span>
             <h3 data-i18n="spice.t">Spices</h3>
@@ -639,6 +620,20 @@
         <a href="#products" data-i18n="nav.products">Products</a> · <a href="#about" data-i18n="nav.about">About</a> · <a href="#contact" data-i18n="con.eyebrow">Contact</a>
       </div>
     </div>
+    <details class="credits">
+      <summary data-i18n="credits.title">Photo credits</summary>
+      <p data-i18n="credits.p">Sample photos from Wikimedia Commons, used under the licences below.</p>
+      <ul>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Chhaimale_VDC.JPG" target="_blank" rel="noopener">Chhaimale VDC</a> by Krish Dulal, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Pangasius_pangasius_or_Pangas_catfish_in_a_Bangladeshi_bazar.jpg" target="_blank" rel="noopener">Pangasius pangasius or Pangas catfish in a Bangladeshi bazar</a> by Sm faysal, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Pure_Honey.jpg" target="_blank" rel="noopener">Pure Honey</a> by Skrissh2013, <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Shiitakegrowing.jpg" target="_blank" rel="noopener">Shiitakegrowing</a> by frankenstoen from Portland, Oregon, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Lemon,_Lemon_tree,_Florence,_Italy.jpg" target="_blank" rel="noopener">Lemon, Lemon tree, Florence, Italy</a> by Vyacheslav Argenberg, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:American_Pekin_Duck.jpg" target="_blank" rel="noopener">American Pekin Duck</a> by Pat Hansen, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%AE%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%B8%E0%A5%8B.jpg" target="_blank" rel="noopener">अम्लिसो</a> by भवानी गौतम, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Dalle_Khursani_1.jpg" target="_blank" rel="noopener">Dalle Khursani 1</a> by Gaurav Dhwaj Khadka, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+      </ul>
+    </details>
     <div class="copy">© <span id="year"></span> <span data-i18n="foot.copy">Ishara Agriculture Multipurpose Farm. Product availability is seasonal; please enquire before ordering.</span></div>
   </div>
 </footer>
@@ -667,6 +662,17 @@
       "page.title": "इशारा कृषि बहुउद्देश्यीय फार्म | चापाकोट, नेपाल",
       "page.desc": "चापाकोट, नेपालको विविधतापूर्ण फार्म। पंगासियस र कार्प माछा, मह, शिताके च्याउ, हाँस, कागती, निबुवा, अम्रिसो र मसला। अर्डरका लागि फोन वा व्हाट्सएप गर्नुहोस्।",
       "bar.call": "फोन",
+      "img.note": "नमुना तस्बिर",
+      "img.hero": "नेपालका हरियो पहाड र गरा खेती",
+      "img.fish": "पंगासियस माछा",
+      "img.bee": "महको चाका र मह",
+      "img.mush": "मुढामा फलेका शिताके च्याउ",
+      "img.fruit": "रुखमा फलेको कागती",
+      "img.duck": "पानीमा सेतो पेकिन हाँस",
+      "img.broom": "अम्रिसोको बोट",
+      "img.spice": "डल्ले खुर्सानी",
+      "credits.title": "तस्बिर श्रेय",
+      "credits.p": "नमुना तस्बिरहरू विकिमिडिया कमन्सबाट, तलका इजाजतपत्रअनुसार प्रयोग गरिएका।",
       "brand.name": "इशारा कृषि",
       "brand.sub": "बहुउद्देश्यीय फार्म · चापाकोट",
       "nav.products": "उत्पादनहरू",
@@ -798,6 +804,9 @@
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
       EN[el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder");
     });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      EN[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
+    });
 
     var current = "en";
     function t(k) { var d = current === "ne" ? NE : EN; return d[k] != null ? d[k] : EN[k]; }
@@ -817,6 +826,7 @@
       document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
       document.querySelectorAll("[data-i18n-html]").forEach(function (el) { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
       document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
+      document.querySelectorAll("[data-i18n-alt]").forEach(function (el) { el.setAttribute("alt", t(el.getAttribute("data-i18n-alt"))); });
       document.querySelectorAll(".lang-switch button").forEach(function (b) {
         b.setAttribute("aria-pressed", b.getAttribute("data-lang") === current ? "true" : "false");
       });
