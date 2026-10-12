@@ -196,10 +196,6 @@
   }
   .product .art { position: relative; aspect-ratio: 4 / 3; background: var(--sand); overflow: hidden; }
   .product .art img { width: 100%; height: 100%; object-fit: cover; }
-  .photo-note {
-    position: absolute; left: 10px; bottom: 10px; background: rgba(20, 30, 20, 0.62); color: #fff;
-    font-size: 0.72rem; font-weight: 500; padding: 2px 9px; border-radius: 999px; pointer-events: none;
-  }
   .product .body { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
   .product p { color: var(--muted); font-size: 0.93rem; flex: 1; }
   .product a { font-weight: 600; font-size: 0.9rem; text-decoration: none; }
@@ -369,7 +365,6 @@
       </div>
       <div class="hero-art">
         <img src="img/hero-hills-1200.webp" srcset="img/hero-hills-720.webp 720w, img/hero-hills-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 520px" width="1200" height="792" fetchpriority="high" alt="Green hills and terraced farmland in Nepal" data-i18n-alt="img.hero">
-        <span class="photo-note" data-i18n="img.note">Sample photo</span>
       </div>
     </div>
   </section>
@@ -408,7 +403,7 @@
 
       <div class="product-grid">
         <article class="product">
-          <div class="art"><img src="img/fish.webp" width="640" height="480" loading="lazy" decoding="async" alt="Pangasius fish" data-i18n-alt="img.fish"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/fish.webp" width="640" height="480" loading="lazy" decoding="async" alt="Pangasius fish" data-i18n-alt="img.fish"></div>
           <div class="body">
             <span class="tag" data-i18n="fish.tag">Aquaculture</span>
             <h3 data-i18n="fish.t">Fish</h3>
@@ -417,7 +412,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art"><img src="img/honey.webp" width="640" height="480" loading="lazy" decoding="async" alt="Honeycomb and honey" data-i18n-alt="img.bee"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/honey.webp" width="640" height="480" loading="lazy" decoding="async" alt="Honeycomb and honey" data-i18n-alt="img.bee"></div>
           <div class="body">
             <span class="tag" data-i18n="honey.tag">Beekeeping</span>
             <h3 data-i18n="honey.t">Honey</h3>
@@ -426,7 +421,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art"><img src="img/shiitake.webp" width="640" height="480" loading="lazy" decoding="async" alt="Shiitake mushrooms growing on a log" data-i18n-alt="img.mush"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/shiitake.webp" width="640" height="480" loading="lazy" decoding="async" alt="Shiitake mushrooms growing on a log" data-i18n-alt="img.mush"></div>
           <div class="body">
             <span class="tag" data-i18n="mush.tag">Cultivation</span>
             <h3 data-i18n="mush.t">Japanese Shiitake Mushrooms</h3>
@@ -435,7 +430,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art"><img src="img/lemon.webp" width="640" height="480" loading="lazy" decoding="async" alt="Lemon on the tree" data-i18n-alt="img.fruit"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/lemon.webp" width="640" height="480" loading="lazy" decoding="async" alt="Lemon on the tree" data-i18n-alt="img.fruit"></div>
           <div class="body">
             <span class="tag" data-i18n="fruit.tag">Orchard</span>
             <h3 data-i18n="fruit.t">Lemon and Nibuwa</h3>
@@ -444,7 +439,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art"><img src="img/duck.webp" width="640" height="480" loading="lazy" decoding="async" alt="White Pekin duck on water" data-i18n-alt="img.duck"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/duck.webp" width="640" height="480" loading="lazy" decoding="async" alt="White Pekin duck on water" data-i18n-alt="img.duck"></div>
           <div class="body">
             <span class="tag" data-i18n="duck.tag">Livestock</span>
             <h3 data-i18n="duck.t">Ducks</h3>
@@ -453,7 +448,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art"><img src="img/amriso.webp" width="640" height="480" loading="lazy" decoding="async" alt="Amriso broom grass plant" data-i18n-alt="img.broom"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/amriso.webp" width="640" height="480" loading="lazy" decoding="async" alt="Amriso broom grass plant" data-i18n-alt="img.broom"></div>
           <div class="body">
             <span class="tag" data-i18n="broom.tag">Cash crop</span>
             <h3 data-i18n="broom.t">Broom Grass (Amriso)</h3>
@@ -462,7 +457,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art"><img src="img/dalle-khursani.webp" width="640" height="480" loading="lazy" decoding="async" alt="Dalle Khursani chillies" data-i18n-alt="img.spice"><span class="photo-note" data-i18n="img.note">Sample photo</span></div>
+          <div class="art"><img src="img/dalle-khursani.webp" width="640" height="480" loading="lazy" decoding="async" alt="Dalle Khursani chillies" data-i18n-alt="img.spice"></div>
           <div class="body">
             <span class="tag" data-i18n="spice.tag">Spices</span>
             <h3 data-i18n="spice.t">Spices</h3>
@@ -622,7 +617,7 @@
     </div>
     <details class="credits">
       <summary data-i18n="credits.title">Photo credits</summary>
-      <p data-i18n="credits.p">Sample photos from Wikimedia Commons, used under the licences below.</p>
+      <p data-i18n="credits.p">Photos from Wikimedia Commons, used under the licences below.</p>
       <ul>
         <li><a href="https://commons.wikimedia.org/wiki/File:Chhaimale_VDC.JPG" target="_blank" rel="noopener">Chhaimale VDC</a> by Krish Dulal, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
         <li><a href="https://commons.wikimedia.org/wiki/File:Pangasius_pangasius_or_Pangas_catfish_in_a_Bangladeshi_bazar.jpg" target="_blank" rel="noopener">Pangasius pangasius or Pangas catfish in a Bangladeshi bazar</a> by Sm faysal, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
@@ -662,7 +657,6 @@
       "page.title": "इशारा कृषि बहुउद्देश्यीय फार्म | चापाकोट, नेपाल",
       "page.desc": "चापाकोट, नेपालको विविधतापूर्ण फार्म। पंगासियस र कार्प माछा, मह, शिताके च्याउ, हाँस, कागती, निबुवा, अम्रिसो र मसला। अर्डरका लागि फोन वा व्हाट्सएप गर्नुहोस्।",
       "bar.call": "फोन",
-      "img.note": "नमुना तस्बिर",
       "img.hero": "नेपालका हरियो पहाड र गरा खेती",
       "img.fish": "पंगासियस माछा",
       "img.bee": "महको चाका र मह",
@@ -672,7 +666,7 @@
       "img.broom": "अम्रिसोको बोट",
       "img.spice": "डल्ले खुर्सानी",
       "credits.title": "तस्बिर श्रेय",
-      "credits.p": "नमुना तस्बिरहरू विकिमिडिया कमन्सबाट, तलका इजाजतपत्रअनुसार प्रयोग गरिएका।",
+      "credits.p": "तस्बिरहरू विकिमिडिया कमन्सबाट, तलका इजाजतपत्रअनुसार प्रयोग गरिएका।",
       "brand.name": "इशारा कृषि",
       "brand.sub": "बहुउद्देश्यीय फार्म · चापाकोट",
       "nav.products": "उत्पादनहरू",

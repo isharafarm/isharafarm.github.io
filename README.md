@@ -41,13 +41,12 @@ Example: the honey description is `data-i18n="honey.p"` in the page, and `"honey
 
 ## Replacing the sample photos
 
-The site currently uses sample photos from Wikimedia Commons, each marked "Sample photo" on the page and credited in the footer (the licences require that credit). To swap in a real farm photo:
+The site currently uses sample photos from Wikimedia Commons, credited in the footer (the licences require that credit). To swap in a real farm photo:
 
 1. Crop the photo to landscape 4:3 (for example 1280 x 960) and keep it under about 200 KB. Free tools such as squoosh.app can resize and convert it.
 2. Upload it to the `img/` folder with a new name, for example `img/fish-pond.jpg`.
 3. In `index.html`, find the matching `<img src="img/fish.webp" ...>` and change the `src` to the new file. Update its `alt` text (English) and the matching `img.*` entry in the `NE` list (Nepali) to describe the real photo.
-4. Delete the `<span class="photo-note" ...>Sample photo</span>` next to that image.
-5. Delete that photo's line from the "Photo credits" list in the footer. When no sample photos are left, delete the whole `<details class="credits">` block.
+4. Delete that photo's line from the "Photo credits" list in the footer. When no sample photos are left, delete the whole `<details class="credits">` block.
 
 | Image in page | Product |
 |---|---|
