@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ishworfarm.github.io/sitemap.xml
+Sitemap: https://isharafarm.github.io/sitemap.xml

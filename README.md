@@ -1,6 +1,6 @@
 # Ishara Agriculture Multipurpose Farm website
 
-Live site: https://ishworfarm.github.io/
+Live site: https://isharafarm.github.io/
 
 A single page, bilingual (English and Nepali) website for Ishara Agriculture Multipurpose Farm, Chapakot, Gandaki Province, Nepal. It is plain HTML with no build step, published by GitHub Pages from the `main` branch.
 
@@ -61,8 +61,8 @@ The site currently uses sample photos from Wikimedia Commons, credited in the fo
 
 ## Languages and search engines
 
-- English is the default address: https://ishworfarm.github.io/
-- Nepali has its own address: https://ishworfarm.github.io/?lang=ne . Share this link with Nepali speaking customers.
+- English is the default address: https://isharafarm.github.io/
+- Nepali has its own address: https://isharafarm.github.io/?lang=ne . Share this link with Nepali speaking customers.
 - Both addresses are listed in `sitemap.xml` and linked to each other in the page head (`hreflang`), so search engines can show the right language.
 - When the page text changes a lot, update the `<lastmod>` dates in `sitemap.xml`.
 - The search description is the `<meta name="description">` tag (English) and `page.desc` in the `NE` list (Nepali). Keep both under about 160 characters where possible, and mention the main products and Chapakot.
