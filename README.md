@@ -10,7 +10,6 @@ A single page, bilingual (English and Nepali) website for Ishara Agriculture Mul
 |---|---|
 | `index.html` | The whole website: content, styling and scripts |
 | `404.html` | Page shown for broken or mistyped links |
-| `img/` | Website photos (currently sample photos from Wikimedia Commons) |
 | `og-image.png` | Preview image shown when the link is shared on WhatsApp, Facebook, Viber, etc. |
 | `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Icons for phone home screens and browser tabs |
 | `site.webmanifest` | Lets visitors add the site to their phone home screen |
@@ -37,27 +36,7 @@ Example: the honey description is `data-i18n="honey.p"` in the page, and `"honey
 
 - **Phone / WhatsApp number:** search for `9779846036728` and `9846036728` and replace every occurrence.
 - **Product descriptions:** search for the product name, then update the matching key in the `NE` list.
-- **Replacing a sample photo with a real farm photo:** see the next section.
-
-## Replacing the sample photos
-
-The site currently uses sample photos from Wikimedia Commons, credited in the footer (the licences require that credit). To swap in a real farm photo:
-
-1. Crop the photo to landscape 4:3 (for example 1280 x 960) and keep it under about 200 KB. Free tools such as squoosh.app can resize and convert it.
-2. Upload it to the `img/` folder with a new name, for example `img/fish-pond.jpg`.
-3. In `index.html`, find the matching `<img src="img/fish.webp" ...>` and change the `src` to the new file. Update its `alt` text (English) and the matching `img.*` entry in the `NE` list (Nepali) to describe the real photo.
-4. Delete that photo's line from the "Photo credits" list in the footer. When no sample photos are left, delete the whole `<details class="credits">` block.
-
-| Image in page | Product |
-|---|---|
-| `img/hero-hills-1200.webp`, `img/hero-hills-720.webp` | Main banner (two sizes: desktop and phone) |
-| `img/fish.webp` | Fish |
-| `img/honey.webp` | Honey |
-| `img/shiitake.webp` | Japanese shiitake |
-| `img/lemon.webp` | Lemon and Nibuwa |
-| `img/duck.webp` | Ducks |
-| `img/amriso.webp` | Amriso |
-| `img/dalle-khursani.webp` | Spices |
+- **Adding photos:** upload the image to this repo (Add file, Upload files), then reference it in `index.html`, for example `<img src="fish.jpg" alt="Fish pond">`.
 
 ## Languages and search engines
 
