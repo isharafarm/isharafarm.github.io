@@ -63,7 +63,7 @@ To add or replace a photo:
 
 The "Life on the farm" section (`id="gallery"` in `index.html`) shows photos and videos. Each item is a `<figure>` with a caption; the English caption is in the page and the Nepali one is in the `NE` list under the matching `gal.*` key.
 
-- **Videos** are MP4 (H.264), 720p, so they play on iPhone, Android and Windows. They only download when a visitor taps play. Keep each under about 10 MB. iPhone `.MOV` files must be converted first, for example with HandBrake (preset "Fast 720p30"), which also removes location data.
+- **Videos** are MP4 (H.264), 720p, so they play on iPhone, Android and Windows. They have no sound (audio is removed) and only download when a visitor taps play. Keep each under about 10 MB. iPhone `.MOV` files must be converted first, for example with HandBrake (preset "Fast 720p30"), which also removes location data.
 - Each video has a cover image (`video/<name>-poster.webp`) shown before it plays.
 - To add an item, copy an existing `<figure>` block, change the file names, the `width`/`height` (the file's real size), and the caption key, then add the Nepali caption to the `NE` list.
 
