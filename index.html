@@ -31,6 +31,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%232f5d34'/><path d='M32 48c0-14 6-22 16-26-2 12-8 22-16 26zm0 0c0-10-4-16-12-19 1 9 5 16 12 19z' fill='%23e9d8a6'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/farm-hills-1200.webp" imagesrcset="img/farm-hills-720.webp 720w, img/farm-hills-1200.webp 1200w" imagesizes="(max-width: 960px) 100vw, 520px" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Mukta:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Mukta:wght@400;500;600;700&display=swap"></noscript>
 <script type="application/ld+json">
@@ -176,6 +177,7 @@
   .hero-facts strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.7rem; color: var(--green-900); }
   .hero-art { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); background: #cfe3c6; }
   .hero-art svg { width: 100%; height: auto; }
+  .hero-art img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 
   /* Pillars */
   .pillars { background: var(--white); }
@@ -192,8 +194,9 @@
     background: var(--white); border-radius: var(--radius); overflow: hidden;
     box-shadow: var(--shadow); display: flex; flex-direction: column;
   }
-  .product .art { height: 130px; display: grid; place-items: center; }
+  .product .art { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center; overflow: hidden; }
   .product .art svg { width: 72px; height: 72px; }
+  .product .art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .product .body { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
   .product p { color: var(--muted); font-size: 0.93rem; flex: 1; }
   .product a { font-weight: 600; font-size: 0.9rem; text-decoration: none; }
@@ -363,32 +366,8 @@
           <div><strong data-i18n="fact.3n">Direct</strong><span data-i18n="fact.3">from the farm</span></div>
         </div>
       </div>
-      <div class="hero-art" role="img" aria-label="Illustration of the farm with hills, a fish pond, beehives and crops">
-        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
-          <rect width="480" height="360" fill="#e8f1f2"/>
-          <circle cx="380" cy="70" r="30" fill="#f4d47c"/>
-          <path d="M0 190 L90 90 L170 170 L260 70 L360 160 L420 110 L480 150 L480 360 L0 360Z" fill="#9fbf8f"/>
-          <path d="M210 110 L260 70 L300 105 L280 100 L260 112 L240 100Z" fill="#ffffff" opacity="0.8"/>
-          <path d="M0 230 Q120 180 240 220 T480 210 L480 360 L0 360Z" fill="#6f9e5c"/>
-          <path d="M0 270 Q140 235 260 262 T480 255 L480 360 L0 360Z" fill="#4f8a4b"/>
-          <ellipse cx="140" cy="305" rx="95" ry="26" fill="#6fb0c2"/>
-          <ellipse cx="140" cy="303" rx="80" ry="18" fill="#8cc6d4"/>
-          <path d="M118 300 q10 -8 20 0 q-10 8 -20 0z M138 300 l8 -5 v10z" fill="#2d6b7d"/>
-          <path d="M160 309 q8 -6 16 0 q-8 6 -16 0z M176 309 l6 -4 v8z" fill="#2d6b7d"/>
-          <g transform="translate(300 262)">
-            <rect x="0" y="12" width="34" height="30" rx="3" fill="#d8b98a"/>
-            <rect x="-3" y="6" width="40" height="8" rx="2" fill="#7a5230"/>
-            <rect x="46" y="12" width="34" height="30" rx="3" fill="#d8b98a"/>
-            <rect x="43" y="6" width="40" height="8" rx="2" fill="#7a5230"/>
-            <circle cx="30" cy="-6" r="3" fill="#8a6412"/><circle cx="58" cy="-12" r="3" fill="#8a6412"/>
-          </g>
-          <g stroke="#2f5d34" stroke-width="3" stroke-linecap="round">
-            <path d="M400 330 v-30 M412 330 v-38 M424 330 v-28 M436 330 v-34 M448 330 v-26"/>
-          </g>
-          <g fill="#7b6a2a"><circle cx="412" cy="290" r="4"/><circle cx="436" cy="294" r="4"/><circle cx="400" cy="298" r="3"/></g>
-          <rect x="250" y="300" width="36" height="28" fill="#f1e8d6"/>
-          <path d="M244 302 L268 284 L292 302Z" fill="#a4482c"/>
-        </svg>
+      <div class="hero-art">
+        <img src="img/farm-hills-1200.webp" srcset="img/farm-hills-720.webp 720w, img/farm-hills-1200.webp 1200w" sizes="(max-width: 960px) 100vw, 520px" width="1200" height="900" fetchpriority="high" alt="Terraced hillside farmland in Chapakot" data-i18n-alt="img.hero">
       </div>
     </div>
   </section>
@@ -427,7 +406,7 @@
 
       <div class="product-grid">
         <article class="product">
-          <div class="art a-fish"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32c8-12 22-16 34-10l12-8v36l-12-8C30 48 16 44 8 32z"/><circle cx="20" cy="30" r="2" fill="currentColor"/></svg></div>
+          <div class="art a-fish"><img src="img/fish.webp" width="640" height="480" loading="lazy" decoding="async" alt="Freshly caught Pangasius fish from the farm pond" data-i18n-alt="img.fish"></div>
           <div class="body">
             <span class="tag" data-i18n="fish.tag">Aquaculture</span>
             <h3 data-i18n="fish.t">Fish</h3>
@@ -454,7 +433,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-fruit"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 20c-12-6-22 2-22 14s10 22 22 18c12 4 22-6 22-18s-10-20-22-14z"/><path d="M32 20c0-6 2-10 6-12M32 18c-4-6-10-6-12-4"/></svg></div>
+          <div class="art a-fruit"><img src="img/nibuwa.webp" width="640" height="480" loading="lazy" decoding="async" alt="Nibuwa fruit growing on the tree at the farm" data-i18n-alt="img.fruit"></div>
           <div class="body">
             <span class="tag" data-i18n="fruit.tag">Orchard</span>
             <h3 data-i18n="fruit.t">Lemon and Nibuwa</h3>
@@ -472,7 +451,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-broom"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6v30M24 36h16l6 22H18l6-22z"/><path d="M26 42l-2 16M32 42v16M38 42l2 16"/></svg></div>
+          <div class="art a-broom"><img src="img/amriso.webp" width="640" height="480" loading="lazy" decoding="async" alt="Bundled Amriso brooms" data-i18n-alt="img.broom"></div>
           <div class="body">
             <span class="tag" data-i18n="broom.tag">Cash crop</span>
             <h3 data-i18n="broom.t">Broom Grass (Amriso)</h3>
@@ -481,7 +460,7 @@
           </div>
         </article>
         <article class="product">
-          <div class="art a-spice"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 14c8 0 12 6 12 14s-4 24-14 28C14 50 12 40 14 30s2-16 8-16z"/><path d="M22 14c0-4 2-8 6-8"/></svg></div>
+          <div class="art a-spice"><img src="img/akbare-khursani.webp" width="640" height="480" loading="lazy" decoding="async" alt="Freshly picked Akbare chillies" data-i18n-alt="img.spice"></div>
           <div class="body">
             <span class="tag" data-i18n="spice.tag">Spices</span>
             <h3 data-i18n="spice.t">Spices</h3>
@@ -664,6 +643,11 @@
     var STORE_KEY = "ishara-lang";
 
     var NE = {
+      "img.hero": "चापाकोटको पहाडी गरा खेती",
+      "img.fish": "फार्मको पोखरीबाट भर्खरै निकालिएका पंगासियस माछा",
+      "img.fruit": "फार्मको रुखमा फलेका निबुवा",
+      "img.broom": "बाँधेर राखिएका अम्रिसोका कुचोहरू",
+      "img.spice": "भर्खरै टिपिएका अकबरे खुर्सानी",
       "page.title": "इशारा कृषि बहुउद्देश्यीय फार्म | चापाकोट, नेपाल",
       "page.desc": "चापाकोट, नेपालको विविधतापूर्ण फार्म। पंगासियस र कार्प माछा, मह, शिताके च्याउ, हाँस, कागती, निबुवा, अम्रिसो र मसला। अर्डरका लागि फोन वा व्हाट्सएप गर्नुहोस्।",
       "bar.call": "फोन",
@@ -798,6 +782,9 @@
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
       EN[el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder");
     });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      EN[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
+    });
 
     var current = "en";
     function t(k) { var d = current === "ne" ? NE : EN; return d[k] != null ? d[k] : EN[k]; }
@@ -817,6 +804,7 @@
       document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
       document.querySelectorAll("[data-i18n-html]").forEach(function (el) { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
       document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
+      document.querySelectorAll("[data-i18n-alt]").forEach(function (el) { el.setAttribute("alt", t(el.getAttribute("data-i18n-alt"))); });
       document.querySelectorAll(".lang-switch button").forEach(function (b) {
         b.setAttribute("aria-pressed", b.getAttribute("data-lang") === current ? "true" : "false");
       });

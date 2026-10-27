@@ -14,6 +14,7 @@ A single page, bilingual (English and Nepali) website for Ishara Agriculture Mul
 | `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Icons for phone home screens and browser tabs |
 | `site.webmanifest` | Lets visitors add the site to their phone home screen |
 | `robots.txt`, `sitemap.xml` | Tell search engines what to index |
+| `img/` | Farm photos used on the page |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 ## Making changes on GitHub
@@ -36,7 +37,26 @@ Example: the honey description is `data-i18n="honey.p"` in the page, and `"honey
 
 - **Phone / WhatsApp number:** search for `9779846036728` and `9846036728` and replace every occurrence.
 - **Product descriptions:** search for the product name, then update the matching key in the `NE` list.
-- **Adding photos:** upload the image to this repo (Add file, Upload files), then reference it in `index.html`, for example `<img src="fish.jpg" alt="Fish pond">`.
+- **Photos:** see "Farm photos" below.
+
+## Farm photos
+
+All photos on the site are the farm's own, stored in `img/` as WebP (small and fast on phones). Products without a photo yet (Honey, Shiitake, Ducks) show a drawn icon instead.
+
+| File | Used for |
+|---|---|
+| `img/farm-hills-1200.webp`, `img/farm-hills-720.webp` | Main banner (desktop and phone sizes) |
+| `img/fish.webp` | Fish |
+| `img/nibuwa.webp` | Lemon and Nibuwa |
+| `img/amriso.webp` | Broom Grass (Amriso) |
+| `img/akbare-khursani.webp` | Spices |
+
+To add or replace a photo:
+
+1. Crop it to landscape 4:3 (product photos 640 x 480, banner 1200 x 900) and keep it under about 200 KB. squoosh.app can resize and convert to WebP, and it also removes the phone's location data.
+2. Upload it to `img/` (Add file, Upload files).
+3. In `index.html`, point the `<img src="...">` at the new file. For a product that still shows a drawing, replace its `<svg>...</svg>` inside `<div class="art ...">` with an `<img>` like the Fish one.
+4. Each photo has an English description in `alt="..."` and a Nepali one in the `NE` list under the matching `img.*` key. Update both.
 
 ## Languages and search engines
 
