@@ -216,6 +216,12 @@
   }
 
   /* About */
+  .gallery { background: var(--green-100); }
+  .gallery-grid { columns: 3 280px; column-gap: 18px; margin-top: 32px; }
+  .gallery-grid figure { break-inside: avoid; margin: 0 0 18px; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .gallery-grid img, .gallery-grid video { display: block; width: 100%; height: auto; background: var(--sand); }
+  .gallery-grid figcaption { padding: 10px 14px; font-size: 0.92rem; color: var(--muted); }
+  .gallery-grid .vid figcaption::before { content: "\25B6\FE0E  "; color: var(--green-700); font-size: 0.8em; }
   .about { background: var(--white); }
   .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
   .owner-card { background: var(--green-700); color: var(--white); border-radius: 24px; padding: 36px; box-shadow: var(--shadow); }
@@ -306,6 +312,9 @@
     .nav ul a { display: block; padding: 12px; }
     .pillar-grid { grid-template-columns: 1fr; }
     section { padding: 56px 0; }
+    .gallery-grid { columns: 2; column-gap: 12px; margin-top: 24px; }
+    .gallery-grid figure { margin-bottom: 12px; }
+    .gallery-grid figcaption { padding: 8px 10px; font-size: 0.85rem; }
     .hero-grid { padding: 40px 16px 56px; }
     .wrap { padding: 0 16px; }
   }
@@ -326,6 +335,7 @@
     <div class="nav-right">
     <ul id="navLinks">
       <li><a href="#products" data-i18n="nav.products">Products</a></li>
+      <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
       <li><a href="#about" data-i18n="nav.about">About</a></li>
       <li><a href="#buyers" data-i18n="nav.bulk">Bulk Orders</a></li>
       <li><a href="#contact" class="btn btn-primary" data-i18n="nav.contact">Contact Us</a></li>
@@ -472,6 +482,45 @@
 
       <div class="note" data-i18n-html="prod.note">
         <strong>Seasonal availability:</strong> As a working farm, our stock changes with the seasons and harvests. Please call or WhatsApp us to confirm what is available, current prices and quantities before placing an order.
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="eyebrow" data-i18n="gal.eyebrow">Gallery</div>
+      <h2 data-i18n="gal.title">Life on the farm</h2>
+      <p class="lead" data-i18n="gal.lead">Photos and videos from the farm in Chapakot. Tap a video to play it.</p>
+      <div class="gallery-grid">
+        <figure>
+          <img src="img/gallery-sunrise.webp" width="800" height="600" loading="lazy" decoding="async" alt="Sunrise over the morning mist" data-i18n-alt="gal.sunrise">
+          <figcaption data-i18n="gal.sunrise">Sunrise over the morning mist</figcaption>
+        </figure>
+        <figure class="vid">
+          <video controls playsinline preload="none" poster="video/chilli-field-poster.webp" width="478" height="850"><source src="video/chilli-field.mp4" type="video/mp4"></video>
+          <figcaption data-i18n="gal.chillifield">Chilli field at the farm</figcaption>
+        </figure>
+        <figure class="vid">
+          <video controls playsinline preload="none" poster="video/fish-catch-poster.webp" width="540" height="960"><source src="video/fish-catch.mp4" type="video/mp4"></video>
+          <figcaption data-i18n="gal.fishcatch">Fresh catch from the pond</figcaption>
+        </figure>
+        <figure>
+          <img src="img/gallery-chillies.webp" width="600" height="953" loading="lazy" decoding="async" alt="Akbare chillies spread out after harvest" data-i18n-alt="gal.chillies">
+          <figcaption data-i18n="gal.chillies">Akbare chillies spread out after harvest</figcaption>
+        </figure>
+        <figure class="vid">
+          <video controls playsinline preload="none" poster="video/fish-pond-poster.webp" width="478" height="850"><source src="video/fish-pond.mp4" type="video/mp4"></video>
+          <figcaption data-i18n="gal.fishpond">Fish in the farm pond</figcaption>
+        </figure>
+        <figure class="vid">
+          <video controls playsinline preload="none" poster="video/fruit-trees-poster.webp" width="540" height="960"><source src="video/fruit-trees.mp4" type="video/mp4"></video>
+          <figcaption data-i18n="gal.fruit">Fruit trees by the farmhouse</figcaption>
+        </figure>
+        <figure class="vid">
+          <video controls playsinline preload="none" poster="video/morning-mist-poster.webp" width="540" height="960"><source src="video/morning-mist.mp4" type="video/mp4"></video>
+          <figcaption data-i18n="gal.mist">Morning mist on the farm</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -654,7 +703,18 @@
       "brand.name": "इशारा कृषि",
       "brand.sub": "बहुउद्देश्यीय फार्म · चापाकोट",
       "nav.products": "उत्पादनहरू",
+      "nav.gallery": "ग्यालेरी",
       "nav.about": "हाम्रो बारेमा",
+      "gal.eyebrow": "ग्यालेरी",
+      "gal.title": "फार्मको जीवन",
+      "gal.lead": "चापाकोटस्थित फार्मका तस्बिर र भिडियोहरू। भिडियो हेर्न थिच्नुहोस्।",
+      "gal.sunrise": "बिहानको कुहिरोमाथि सूर्योदय",
+      "gal.chillifield": "फार्मको खुर्सानी बारी",
+      "gal.fishcatch": "पोखरीबाट भर्खरै निकालिएका माछा",
+      "gal.chillies": "टिपेपछि फिँजाएर राखिएका अकबरे खुर्सानी",
+      "gal.fishpond": "फार्मको पोखरीमा माछा",
+      "gal.fruit": "फार्महाउस नजिकका फलफूलका रुख",
+      "gal.mist": "फार्ममा बिहानको कुहिरो",
       "nav.bulk": "थोक अर्डर",
       "nav.contact": "सम्पर्क गर्नुहोस्",
 
@@ -785,6 +845,10 @@
     document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
       EN[el.getAttribute("data-i18n-alt")] = el.getAttribute("alt");
     });
+
+    document.addEventListener("play", function (e) {
+      document.querySelectorAll(".gallery-grid video").forEach(function (v) { if (v !== e.target) v.pause(); });
+    }, true);
 
     var current = "en";
     function t(k) { var d = current === "ne" ? NE : EN; return d[k] != null ? d[k] : EN[k]; }

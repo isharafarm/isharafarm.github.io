@@ -15,6 +15,7 @@ A single page, bilingual (English and Nepali) website for Ishara Agriculture Mul
 | `site.webmanifest` | Lets visitors add the site to their phone home screen |
 | `robots.txt`, `sitemap.xml` | Tell search engines what to index |
 | `img/` | Farm photos used on the page |
+| `video/` | Gallery videos (MP4) and their cover images |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 ## Making changes on GitHub
@@ -57,6 +58,14 @@ To add or replace a photo:
 2. Upload it to `img/` (Add file, Upload files).
 3. In `index.html`, point the `<img src="...">` at the new file. For a product that still shows a drawing, replace its `<svg>...</svg>` inside `<div class="art ...">` with an `<img>` like the Fish one.
 4. Each photo has an English description in `alt="..."` and a Nepali one in the `NE` list under the matching `img.*` key. Update both.
+
+## Gallery
+
+The "Life on the farm" section (`id="gallery"` in `index.html`) shows photos and videos. Each item is a `<figure>` with a caption; the English caption is in the page and the Nepali one is in the `NE` list under the matching `gal.*` key.
+
+- **Videos** are MP4 (H.264), 720p, so they play on iPhone, Android and Windows. They only download when a visitor taps play. Keep each under about 10 MB. iPhone `.MOV` files must be converted first, for example with HandBrake (preset "Fast 720p30"), which also removes location data.
+- Each video has a cover image (`video/<name>-poster.webp`) shown before it plays.
+- To add an item, copy an existing `<figure>` block, change the file names, the `width`/`height` (the file's real size), and the caption key, then add the Nepali caption to the `NE` list.
 
 ## Languages and search engines
 
